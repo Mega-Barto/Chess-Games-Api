@@ -3,6 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from .serializers import GameSerializer, PlayerSerializer
 from .models import Game, Player
+from .permissions import IsAdminOrReadOnly
 
 class GameViewSet(viewsets.ModelViewSet):
     """
@@ -10,6 +11,7 @@ class GameViewSet(viewsets.ModelViewSet):
     """
     serializer_class = GameSerializer
     queryset = Game.objects.all()
+    permission_classes = [IsAdminOrReadOnly]
 
 class PlayerViewSet(viewsets.ModelViewSet):
     """
@@ -17,6 +19,7 @@ class PlayerViewSet(viewsets.ModelViewSet):
     """
     serializer_class = PlayerSerializer
     queryset = Player.objects.all()
+    permission_classes = [IsAdminOrReadOnly]
 
     @action(["GET"], detail=False, url_path="list-highest-elo-players")
     def list_highest_elo_players(self, request):
