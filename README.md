@@ -1,4 +1,9 @@
-## Chess games API
+[![Python][Py]][Py-url]
+[![Ubuntu][DRF]][DRF-url]
+
+# Chess games API
+
+## Detalles generales
 
 ### 1. **Definición del Propósito**
 
@@ -75,3 +80,60 @@
 - **Detector de ECO**: Asignar un SerializerMethodField que asigne un ECO según los primeros movimientos de la partida.
 
 - **Tipo de partida**: Parámetro para diferenciar entre Partidas Clásicas, Rápidas o Blitz.
+
+---
+
+## Instalación
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone https://github.com/Mega-Barto/Chess-Games-Api.git
+   cd Chess-Games-Api
+   ```
+
+2. **Crear y activar un entorno virtual**
+   Es recomendable usar un entorno virtual para evitar conflictos entre dependencias de diferentes proyectos.
+
+   ```bash
+   python3 -m venv venv
+   venv\Scripts\activate
+   ```
+
+3. **Instalar las dependencias**
+   Usa el archivo `requirements.txt` para instalar todas las dependencias necesarias.
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configurar la base de datos**
+   Aplica las migraciones para configurar la base de datos según el modelo definido en el proyecto.
+
+   ```bash
+   python manage.py migrate
+   ```
+
+5. **Crear un superusuario (opcional)**
+   Si necesitas acceder al panel de administración, crea un superusuario:
+
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+7. **Iniciar el servidor de desarrollo**
+   Inicia el servidor para verificar que el proyecto funciona correctamente.
+
+   ```bash
+   python manage.py runserver
+   ```
+
+   Luego, abre un navegador y accede a `http://127.0.0.1:8000/api`.
+
+
+
+
+[DRF]: https://img.shields.io/badge/django--rest--framework-3.15.2-blue?style=for-the-badge&labelColor=333333&logo=django&logoColor=white&color=red
+[DRF-url]: https://www.django-rest-framework.org/
+[Py]: https://img.shields.io/badge/python-3.15.2-blue?style=for-the-badge&logo=python&logoColor=ffdd54
+[Py-url]: https://www.python.org/
